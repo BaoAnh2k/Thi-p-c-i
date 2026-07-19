@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#791b38" />
+  <meta name="description" content="Thiệp mời Lễ Vu Quy của Phan Thu Hằng và Đoàn Xuân Trường" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Thu Hằng & Xuân Trường — Thiệp mời Lễ Vu Quy" />
+  <meta property="og:description" content="Trân trọng kính mời bạn đến chung vui cùng gia đình chúng tôi." />
+  <meta property="og:image" content="assets/images/og-cover.jpg" />
+  <title>Thu Hằng & Xuân Trường — Lễ Vu Quy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Bonheur+Royale&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/config.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body class="is-locked">
+  <noscript>Vui lòng bật JavaScript để xem đầy đủ thiệp mời.</noscript>
+
+  <canvas id="petalCanvas" aria-hidden="true"></canvas>
+
+  <div class="opening" id="opening" role="dialog" aria-modal="true" aria-label="Mở thiệp mời">
+    <div class="opening__door opening__door--left" aria-hidden="true"></div>
+    <div class="opening__door opening__door--right" aria-hidden="true"></div>
+    <div class="opening__glow" aria-hidden="true"></div>
+    <div class="opening__card">
+      <div class="opening__monogram"><span>H</span><i>&</i><span>T</span></div>
+      <p class="kicker">THIỆP MỜI LỄ VU QUY</p>
+      <h1><span data-bride-first>Thu Hằng</span><i>&</i><span data-groom-first>Xuân Trường</span></h1>
+      <div class="opening__line"></div>
+      <p class="opening__date">02 · 08 · 2026</p>
+      <p class="opening__guest">Trân trọng kính mời<br /><strong data-guest>Quý khách</strong></p>
+      <button class="button button--primary opening__button" id="openInvitation" type="button">
+        <span>Mở thiệp</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <small>Chạm để mở thiệp và bật nhạc nền</small>
+    </div>
+  </div>
+
+  <audio id="weddingMusic" loop preload="metadata">
+    <source src="assets/audio/nhac-cuoi.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="floating-tools" aria-label="Công cụ nhanh">
+    <button class="round-tool music-tool" id="musicToggle" type="button" aria-label="Bật hoặc tắt nhạc">
+      <span class="music-disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+      <span class="tool-label">Nhạc</span>
+    </button>
+    <button class="round-tool" id="scrollTop" type="button" aria-label="Lên đầu trang">
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></span>
+      <span class="tool-label">Lên đầu</span>
+    </button>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero__media" data-parallax="0.18" role="img" aria-label="Ảnh bìa cô dâu chú rể"></div>
+      <div class="hero__veil"></div>
+      <div class="hero__grain"></div>
+      <div class="hero__content reveal reveal--zoom">
+        <p class="kicker kicker--light">THE WEDDING CELEBRATION</p>
+        <p class="hero__mini">Lễ Vu Quy</p>
+        <h1 class="hero__names">
+          <span data-bride-first>Thu Hằng</span>
+          <i>&</i>
+          <span data-groom-first>Xuân Trường</span>
+        </h1>
+        <div class="hero__date-line">
+          <span>CHỦ NHẬT</span><strong>02</strong><span>08 · 2026</span>
+        </div>
+        <div class="hero__guest-card">
+          <span>Trân trọng kính mời</span>
+          <strong data-guest>Quý khách</strong>
+          <small>đến chung vui cùng gia đình chúng tôi</small>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#welcome" aria-label="Cuộn xuống nội dung">
+        <span></span><small>SCROLL</small>
+      </a>
+    </section>
+
+    <section class="section welcome" id="welcome">
+      <div class="botanical botanical--left" aria-hidden="true"></div>
+      <div class="botanical botanical--right" aria-hidden="true"></div>
+      <div class="container container--narrow reveal">
+        <p class="kicker">SAVE OUR DATE</p>
+        <h2 class="section-title">Ngày chúng mình về chung một nhà</h2>
+        <div class="flourish" aria-hidden="true"><span></span><i>♥</i><span></span></div>
+        <p class="lead">Hạnh phúc của chúng tôi sẽ trọn vẹn hơn khi có sự hiện diện và lời chúc phúc của những người thân thương.</p>
+        <div class="date-emblem" aria-label="Ngày cưới 2 tháng 8 năm 2026">
+          <span>CHỦ NHẬT</span>
+          <strong>02</strong>
+          <span>THÁNG 08 · 2026</span>
+        </div>
+        <p class="lunar">Nhằm ngày 20 tháng 06 năm Bính Ngọ</p>
+        <div class="countdown" id="countdown" aria-label="Đếm ngược đến Lễ Vu Quy">
+          <div><strong id="days">00</strong><span>Ngày</span></div>
+          <div><strong id="hours">00</strong><span>Giờ</span></div>
+          <div><strong id="minutes">00</strong><span>Phút</span></div>
+          <div><strong id="seconds">00</strong><span>Giây</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section guest-invite">
+      <div class="guest-invite__media" data-parallax="0.1"></div>
+      <div class="guest-invite__overlay"></div>
+      <div class="container container--narrow reveal">
+        <div class="guest-invite__paper">
+          <svg class="rings" viewBox="0 0 120 70" aria-hidden="true"><circle cx="46" cy="36" r="24"/><circle cx="74" cy="36" r="24"/></svg>
+          <p class="kicker">TRÂN TRỌNG KÍNH MỜI</p>
+          <h2 data-guest>Quý khách</h2>
+          <p>Đến dự buổi tiệc rượu chung vui cùng gia đình chúng tôi tại tư gia nhà gái.</p>
+          <span class="signature">Kính mời!</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section families" id="couple">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="kicker">TWO FAMILIES, ONE LOVE</p>
+          <h2 class="section-title">Cô dâu & Chú rể</h2>
+        </div>
+        <div class="family-layout">
+          <article class="person-card reveal reveal--left">
+            <figure class="person-card__photo person-card__photo--bride"><span>ẢNH CÔ DÂU</span></figure>
+            <div class="person-card__body">
+              <p class="person-card__role">ÚT NỮ</p>
+              <h3 data-bride-full>Phan Thu Hằng</h3>
+              <div class="parent-list">
+                <p><span>Bà</span><strong>Phan Thị Minh</strong></p>
+              </div>
+              <address>Tổ 9 – Thôn Phú Hòa<br />Hàm Thuận Bắc – Lâm Đồng</address>
+            </div>
+          </article>
+
+          <div class="family-heart reveal" aria-hidden="true"><span>♥</span><small>forever</small></div>
+
+          <article class="person-card person-card--reverse reveal reveal--right">
+            <figure class="person-card__photo person-card__photo--groom"><span>ẢNH CHÚ RỂ</span></figure>
+            <div class="person-card__body">
+              <p class="person-card__role">TRƯỞNG NAM</p>
+              <h3 data-groom-full>Đoàn Xuân Trường</h3>
+              <div class="parent-list">
+                <p><span>Ông</span><strong>Đoàn Xuân Vũ</strong></p>
+                <p><span>Bà</span><strong>Nguyễn Thị Mười</strong></p>
+              </div>
+              <address>Tổ 3 – KP. Thắng Hiệp<br />P. Hàm Thắng – Lâm Đồng</address>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section announcement" id="announcement">
+      <div class="container container--narrow">
+        <article class="announcement-card reveal reveal--zoom">
+          <div class="announcement-card__corner announcement-card__corner--tl" aria-hidden="true"></div>
+          <div class="announcement-card__corner announcement-card__corner--br" aria-hidden="true"></div>
+          <p class="kicker">TRÂN TRỌNG BÁO TIN LỄ VU QUY</p>
+          <p class="announcement-card__small">CỦA CON CHÚNG TÔI</p>
+          <h2><span data-bride-full>Phan Thu Hằng</span><i>&</i><span data-groom-full>Đoàn Xuân Trường</span></h2>
+          <div class="couple-roles"><span>Út nữ</span><b>♥</b><span>Trưởng nam</span></div>
+          <p>Hôn lễ được cử hành tại tư gia nhà gái</p>
+          <p>Vào lúc <strong>08 giờ 00</strong>, Chủ Nhật</p>
+          <div class="announcement-card__date">02 . 08 . 2026</div>
+          <p class="lunar">Nhằm ngày 20 tháng 06 năm Bính Ngọ</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section events" id="events">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="kicker">WEDDING EVENTS</p>
+          <h2 class="section-title">Thời gian & Địa điểm</h2>
+          <p>Hai khoảnh khắc quan trọng, cùng một lời mời chân thành.</p>
+        </div>
+
+        <div class="event-grid">
+          <article class="event-card reveal reveal--left">
+            <div class="event-card__number">01</div>
+            <div class="event-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M18 7h11v20c0 8-4 12-10 12S9 35 9 27V7h9Z"/><path d="M44 7h11v20c0 8-4 12-10 12s-10-4-10-12V7h9Z"/><path d="M19 39v13M45 39v13M12 53h14M38 53h14"/></svg>
+            </div>
+            <p class="event-card__type">TIỆC RƯỢU CHUNG VUI</p>
+            <h3>Tư gia nhà gái</h3>
+            <div class="event-card__time"><strong>16:00</strong><span>Thứ Bảy</span></div>
+            <div class="calendar-row"><span>01</span><b>THÁNG 08</b><i>2026</i></div>
+            <p class="lunar">Nhằm ngày 19 tháng 06 năm Bính Ngọ</p>
+            <address>Tổ 9 – Thôn Phú Hòa<br />Xã Hàm Thuận Bắc – Tỉnh Lâm Đồng</address>
+            <div class="event-actions">
+              <a class="button button--outline map-link" data-map="reception" target="_blank" rel="noopener">Xem chỉ đường</a>
+              <button class="button button--text add-calendar" data-event="reception" type="button">Lưu lịch</button>
+            </div>
+          </article>
+
+          <article class="event-card event-card--featured reveal reveal--right">
+            <div class="event-card__number">02</div>
+            <div class="event-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M32 54C12 41 8 31 8 21c0-8 6-14 14-14 5 0 9 3 10 7 2-4 6-7 11-7 8 0 14 6 14 14 0 10-5 20-25 33Z"/><path d="m24 24 6 6 12-14"/></svg>
+            </div>
+            <p class="event-card__type">LỄ VU QUY</p>
+            <h3>Tư gia nhà gái</h3>
+            <div class="event-card__time"><strong>08:00</strong><span>Chủ Nhật</span></div>
+            <div class="calendar-row"><span>02</span><b>THÁNG 08</b><i>2026</i></div>
+            <p class="lunar">Nhằm ngày 20 tháng 06 năm Bính Ngọ</p>
+            <address>Tổ 9 – Thôn Phú Hòa<br />Xã Hàm Thuận Bắc – Tỉnh Lâm Đồng</address>
+            <div class="event-actions">
+              <a class="button button--outline map-link" data-map="ceremony" target="_blank" rel="noopener">Xem chỉ đường</a>
+              <button class="button button--text add-calendar" data-event="ceremony" type="button">Lưu lịch</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section timeline" id="timeline">
+      <div class="container container--narrow">
+        <div class="section-heading reveal">
+          <p class="kicker">OUR CELEBRATION</p>
+          <h2 class="section-title">Lịch trình</h2>
+        </div>
+        <div class="timeline__line" aria-hidden="true"></div>
+        <article class="timeline-item reveal">
+          <time><strong>16:00</strong><span>01.08.2026</span></time>
+          <div><h3>Đón khách & Tiệc rượu</h3><p>Gia đình nhà gái hân hoan đón tiếp quý khách tại tư gia.</p></div>
+        </article>
+        <article class="timeline-item reveal">
+          <time><strong>08:00</strong><span>02.08.2026</span></time>
+          <div><h3>Cử hành Lễ Vu Quy</h3><p>Nghi thức Lễ Vu Quy được cử hành trong sự chứng kiến của hai gia đình.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="kicker">OUR GALLERY</p>
+          <h2 class="section-title">Album hình cưới</h2>
+          <p>Ảnh hiện tại là ảnh giữ chỗ. Bạn chỉ cần thay đúng tên file trong thư mục <code>assets/images</code>.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-item gallery-item--tall reveal" data-image="assets/images/gallery-1.jpg" type="button"><img src="assets/images/gallery-1.jpg" alt="Ảnh cưới 1" loading="lazy" /><span>Xem ảnh</span></button>
+          <button class="gallery-item reveal" data-image="assets/images/gallery-2.jpg" type="button"><img src="assets/images/gallery-2.jpg" alt="Ảnh cưới 2" loading="lazy" /><span>Xem ảnh</span></button>
+          <button class="gallery-item reveal" data-image="assets/images/gallery-3.jpg" type="button"><img src="assets/images/gallery-3.jpg" alt="Ảnh cưới 3" loading="lazy" /><span>Xem ảnh</span></button>
+          <button class="gallery-item gallery-item--wide reveal" data-image="assets/images/gallery-4.jpg" type="button"><img src="assets/images/gallery-4.jpg" alt="Ảnh cưới 4" loading="lazy" /><span>Xem ảnh</span></button>
+          <button class="gallery-item reveal" data-image="assets/images/gallery-5.jpg" type="button"><img src="assets/images/gallery-5.jpg" alt="Ảnh cưới 5" loading="lazy" /><span>Xem ảnh</span></button>
+          <button class="gallery-item reveal" data-image="assets/images/gallery-6.jpg" type="button"><img src="assets/images/gallery-6.jpg" alt="Ảnh cưới 6" loading="lazy" /><span>Xem ảnh</span></button>
+          <button class="gallery-item gallery-item--wide reveal" data-image="assets/images/gallery-7.jpg" type="button"><img src="assets/images/gallery-7.jpg" alt="Ảnh cưới 7" loading="lazy" /><span>Xem ảnh</span></button>
+          <button class="gallery-item reveal" data-image="assets/images/gallery-8.jpg" type="button"><img src="assets/images/gallery-8.jpg" alt="Ảnh cưới 8" loading="lazy" /><span>Xem ảnh</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location" id="location">
+      <div class="location__photo" data-parallax="0.08"></div>
+      <div class="location__overlay"></div>
+      <div class="container reveal">
+        <div class="location-card">
+          <p class="kicker">ĐỊA ĐIỂM TỔ CHỨC</p>
+          <h2>Tư gia nhà gái</h2>
+          <address>Tổ 9 – Thôn Phú Hòa<br />Xã Hàm Thuận Bắc – Tỉnh Lâm Đồng</address>
+          <a class="button button--primary map-link" data-map="reception" target="_blank" rel="noopener">
+            <span>Mở Google Maps</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6 7-13a7 7 0 1 0-14 0c0 7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rsvp" id="rsvp">
+      <div class="container">
+        <div class="rsvp-layout">
+          <div class="rsvp-copy reveal reveal--left">
+            <p class="kicker">XÁC NHẬN THAM DỰ</p>
+            <h2 class="section-title">Bạn sẽ đến chung vui cùng chúng tôi chứ?</h2>
+            <p>Sự hiện diện của quý khách là niềm vinh hạnh cho gia đình chúng tôi.</p>
+            <span class="signature">Thu Hằng & Xuân Trường</span>
+          </div>
+          <form class="rsvp-form reveal reveal--right" id="rsvpForm">
+            <label>Họ và tên<input id="guestName" name="guestName" autocomplete="name" required /></label>
+            <div class="form-row">
+              <label>Số khách<select name="guestCount"><option value="1">1 khách</option><option value="2">2 khách</option><option value="3">3 khách</option><option value="4">4 khách</option><option value="5+">5 khách trở lên</option></select></label>
+              <label>Tham dự<select name="attendance" required><option value="">Chọn phản hồi</option><option value="yes">Sẽ tham dự</option><option value="maybe">Có thể tham dự</option><option value="no">Không thể tham dự</option></select></label>
+            </div>
+            <label>Lời nhắn<textarea name="message" rows="4" placeholder="Gửi lời chúc đến cô dâu và chú rể..."></textarea></label>
+            <button class="button button--primary" type="submit">Gửi xác nhận</button>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section closing">
+      <div class="closing__media" data-parallax="0.1"></div>
+      <div class="closing__overlay"></div>
+      <div class="container container--narrow reveal">
+        <p class="kicker kicker--light">THANK YOU</p>
+        <h2>Rất hân hạnh được đón tiếp!</h2>
+        <p>Chân thành cảm ơn tình cảm và lời chúc phúc của quý khách dành cho hai gia đình.</p>
+        <div class="closing__names"><span data-bride-first>Thu Hằng</span><i>&</i><span data-groom-first>Xuân Trường</span></div>
+        <button class="button button--glass" id="openGift" type="button">Gửi mừng cưới</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><span data-bride-first>Thu Hằng</span> <i>♥</i> <span data-groom-first>Xuân Trường</span></p>
+    <small>02.08.2026 · Lâm Đồng</small>
+  </footer>
+
+  <dialog class="modal" id="imageModal">
+    <button class="modal__close" data-close-image type="button" aria-label="Đóng ảnh">×</button>
+    <img id="modalImage" alt="Ảnh cưới phóng lớn" />
+  </dialog>
+
+  <dialog class="modal modal--gift" id="giftModal">
+    <button class="modal__close" data-close-gift type="button" aria-label="Đóng">×</button>
+    <div class="gift-content">
+      <p class="kicker">GỬI MỪNG CƯỚI</p>
+      <h2>Lời chúc từ xa</h2>
+      <p>Thông tin bên dưới đang để mẫu. Hãy chỉnh trong <code>assets/js/config.js</code> trước khi đăng thiệp.</p>
+      <div id="bankCards" class="bank-cards"></div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
