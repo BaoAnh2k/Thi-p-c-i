@@ -34,9 +34,9 @@ window.WEDDING_CONFIG = {
   banks: [
     {
       label: "Nhà gái",
-      bank: "TÊN NGÂN HÀNG — BỔ SUNG SAU",
+      bank: "TÊN NGÂN HÀNG — Agribank",
       accountName: "PHAN THU HẰNG",
-      accountNumber: "BỔ SUNG SAU"
+      accountNumber: "4810205406597"
     }
   ]
 };
