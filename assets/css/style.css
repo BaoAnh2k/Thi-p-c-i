@@ -97,7 +97,7 @@ code { padding: .12em .35em; border-radius: .35em; background: rgba(197,47,80,.1
   transition: visibility .9s step-end;
 }
 .opening.is-open { visibility: hidden; }
-.opening__door { position: absolute; inset-block: 0; width: 51%; background-color: #b32948; background-image: linear-gradient(135deg, rgba(255,255,255,.14), transparent 38%), url("../images/cover.jpg"); background-size: cover; filter: saturate(.6) brightness(.55); transition: transform 1.2s cubic-bezier(.77,0,.18,1); }
+.opening__door { position: absolute; inset-block: 0; width: 51%; background-color: #b32948; background-image: linear-gradient(135deg, rgba(255,255,255,.14), transparent 38%), url("../images/anht4.png"); background-size: cover; filter: saturate(.6) brightness(.55); transition: transform 1.2s cubic-bezier(.77,0,.18,1); }
 .opening__door::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(83,41,47,.55), rgba(83,41,47,.1)); }
 .opening__door--left { left: 0; background-position: 42% center; clip-path: polygon(0 0,100% 0,92% 50%,100% 100%,0 100%); }
 .opening__door--right { right: 0; background-position: 58% center; clip-path: polygon(0 0,100% 0,100% 100%,0 100%,8% 50%); transform-origin: right center; }
