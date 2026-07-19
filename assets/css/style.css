@@ -183,8 +183,8 @@ code { padding: .12em .35em; border-radius: .35em; background: rgba(197,47,80,.1
 .person-card__photo { position: relative; aspect-ratio: 4/5; margin: 0; overflow: hidden; background-position: center; background-size: cover; box-shadow: var(--shadow); }
 .person-card__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 65%, rgba(31,21,21,.44)); }
 .person-card__photo span { position: absolute; z-index: 2; left: 18px; bottom: 15px; color: rgba(255,255,255,.76); font-size: .62rem; letter-spacing: .18em; }
-.person-card__photo--bride { background-image: url("../images/bride.jpg"); }
-.person-card__photo--groom { background-image: url("../images/groom.jpg"); }
+.person-card__photo--bride { background-image: url("../images/chu.png"); }
+.person-card__photo--groom { background-image: url("../images/codau.png"); }
 .person-card__body { width: calc(100% - 40px); margin: -45px auto 0; padding: 28px 24px; position: relative; z-index: 3; background: var(--paper); box-shadow: 0 17px 45px rgba(60,42,41,.12); text-align: center; }
 .person-card__role { margin: 0; color: var(--rose); font-size: .66rem; letter-spacing: .18em; font-weight: 700; }
 .person-card h3 { margin: 3px 0 18px; color: var(--rose-dark); font-family: var(--script); font-size: clamp(2.8rem,6vw,4.3rem); font-weight: 400; line-height: .9; }
